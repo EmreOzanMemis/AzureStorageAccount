@@ -1,0 +1,13 @@
+using Azure.Storage.Queues; // Namespace for Queue storage types
+using Azure.Storage.Queues.Models; // Namespace for PeekedMessage
+
+// Bağlantı dizesi ile Queue Client oluştur
+string connectionString = "your_connection_string";
+QueueClient queueClient = new QueueClient(connectionString, "your_queue_name");
+
+// Queue'ya mesaj gönder
+queueClient.SendMessage("Hello, World!");
+
+// Queue'dan mesaj al ve sil
+QueueMessage[] retrievedMessage = queueClient.ReceiveMessages();
+queueClient.DeleteMessage(retrievedMessage[0].MessageId, retrievedMessage[0].PopReceipt);
