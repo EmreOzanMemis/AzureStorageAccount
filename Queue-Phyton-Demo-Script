@@ -1,0 +1,18 @@
+from azure.storage.queue import QueueServiceClient, QueueClient
+
+# Bağlantı dizesi ile Queue Service Client oluştur
+connect_str = 'your_connection_string'
+queue_service_client = QueueServiceClient.from_connection_string(connect_str)
+
+# Queue'ya bağlan veya oluştur
+queue_client = queue_service_client.get_queue_client(queue="your_queue_name")
+
+# Queue'ya mesaj ekle
+queue_client.send_message(u"Hello, World!")
+
+# Queue'dan mesaj al
+messages = queue_client.receive_messages()
+for msg in messages:
+    print(msg.content)
+    # Mesajı işlemden sonra sil
+    queue_client.delete_message(msg)
