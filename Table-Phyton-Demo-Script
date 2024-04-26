@@ -1,0 +1,14 @@
+from azure.data.tables import TableServiceClient
+
+connection_string = "Your_Connection_String"
+table_service = TableServiceClient.from_connection_string(conn_str=connection_string)
+table_client = table_service.get_table_client(table_name="Your_Table_Name")
+
+entity = {
+    "PartitionKey": "TestPartition",
+    "RowKey": "001",
+    "Name": "Example Name",
+    "Value": 100
+}
+
+table_client.create_entity(entity=entity)
