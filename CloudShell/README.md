@@ -10,18 +10,26 @@ Azure PowerShell modülüne bağlanın ve oturum açın
 Parametre Açıklamaları
 
   `$subscriptionId`: Azure abonelik kimliğinizi belirtir. Storage Account'un hangi abonelik altında oluşturulacağını tanımlar.
+  
   `$resourceGroupName`: Depolama hesabının ait olduğu kaynak grubunun adı. Kaynak grupları, birden çok Azure kaynağını düzenlemek ve yönetmek için kullanılır.
+  
   `$storageAccountName`: Storage Account'un benzersiz bir adı. Azure genelinde benzersiz olması gerekir. Genellikle "sa-" gibi bir önekle başlar.
+  
   `$region`: Storage Account'un oluşturulacağı coğrafi bölge. Örneğin, "eastus" veya "westeurope". Kullanıcıların çoğunluğuna yakın bir bölge seçmek, erişim hızını ve performansını artırabilir.
+  
   `$performance`: Storage Account'un performans seviyesi. "Standard" veya "Premium" olarak seçilebilir. Standart depolama, HDD tabanlıdır ve maliyet açısından daha uygundur; Premium depolama ise SSD tabanlıdır ve yüksek performans gerektiren uygulamalar için kullanılır.
+  
   `$redundancy`: Yedekleme türünü belirtir. Verilerin kaybını önlemek için kullanılan farklı yedekleme türleri:
         LRS (Locally Redundant Storage): Verileri aynı veri merkezinde üç kopya olarak saklar.
         GRS (Geo-Redundant Storage): Verileri, birincil ve ikincil veri merkezlerinde coğrafi olarak yedekli saklar.
         ZRS (Zone-Redundant Storage): Verileri, farklı kullanılabilirlik bölgelerinde (availability zones) saklar.
+        
   `$accessTier`: Blob depolama için erişim katmanı.
         Hot: Sık erişilen veriler için, yüksek maliyetli depolama.
         Cool: Daha az erişilen veriler için, düşük maliyetli depolama.
+        
   `$enablePublicAccess`: Tüm ağlardan veya yalnızca belirli ağlardan genel erişimi etkinleştirmek için kullanılır. Bu örnekte, $true olarak ayarlanmış ve tüm ağlardan erişimi etkinleştirir.
+  
   `$tags`: Depolama hesabına eklenen ek bilgi etiketleri. Bu etiketler, hesapların kategorize edilmesi ve maliyet takibi gibi işlevler için kullanılır.
 
 Betik Açıklaması
